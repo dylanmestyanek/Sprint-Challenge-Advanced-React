@@ -5,7 +5,7 @@ import Card from "./Card"
 const CardContainer = ({ googleData }) => {
     return (
         <div>
-            <h1 data-testid="dataTitle">Women's World Cup Player's</h1>
+            <h1 data-testid="dataTitle">Women's World Cup Players</h1>
             {
                 googleData.map(player => <Card player={player} />)
             }

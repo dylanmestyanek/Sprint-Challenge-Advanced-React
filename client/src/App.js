@@ -34,7 +34,10 @@ function App() {
     return () => {
       source.cancel();
     };
-  }, [URL]);
+  }, []);
+
+  
+
    return (
     <div onClick={() => setStoredPlayers(googleData)} className="App">
       <CardContainer googleData={googleData} />

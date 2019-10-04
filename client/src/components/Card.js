@@ -5,7 +5,7 @@ const Card = ({ player }) => {
         <div>
             <h3>{player.name}</h3>
             <p>Country: {player.country}</p>
-            <p>Searches: {player.searches}</p>
+            <p data-testid="displayedSearchAmount">Searches: {player.searches}</p>
         </div>
     );
 }
