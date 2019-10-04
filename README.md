@@ -23,9 +23,26 @@ Commit your code regularly and meaningfully. This helps both you (in case you ev
 Demonstrate your understanding of this Sprint's concepts by answering the following free-form questions. Edit the `ANSWERS.md` file to include your answers after each question. Make sure to leave a blank line above and below your answer so it is clear and easy to read by your project manager.
 
 - [ ] Why would you use class component over function components (removing hooks from the question)?
+
+    <b>Answer:</b> While functional components are clean, minimal, and easy to read - class components are still the gold standard when it comes to older code. In the job environment, it is highly likely that most code has still yet to be transferred to functional components with hooks, from class components. If we are referring to functional components <i>without</i> hooks, then class components are advantageous because they used to be the only way to hold state.
+
 - [ ] Name three lifecycle methods and their purposes.
+
+    <b>Answer:</b> 
+
+    - componentWillMount - cWM runs code prior to the components being rendered to the screen. For example, having an API call running, before the page is finished loading up. 
+
+    - componentDidMount - cDM runs code as soon as components are rendered to the screen. This is useful in situations where you may want to grab information during the inital rendering phase, that won't be retrievable after re-renders occur.
+
+    - componentWillUpdate - cWU is one of the more usefull lifecycle methods, as it allows you to run code, depending on a change in state. For example, if you are making an API call based on the user's search input, you can re-render/re-call the API each time the search input has changed.
+
 - [ ] What is the purpose of a custom hook?
+
+    <b>Answer:</b> A custom hook has several advantages, mainly being the reinforcement of the D.R.Y principle. Custom hooks allow you to extract repeated code, into a simple, reusable chunk of code. Additionally, custom hooks can be extracted out of your component's file, giving them a cleaner, more minimal feel.
+
 - [ ] Why is it important to test our apps?
+
+    <b>Answer:</b> Testing apps is important to ensure that the functionality is performing as expected. It also ensures that there are no hidden bugs that are unable to be seen from the user's end. Testing allows a deeper dive into your code which helps in troubleshooting, as well as, acting like documentation for someone else reading through your code. This allows them to understand what is happening within your code, and understanding what broke (if something does), and why.
 
 ## Project Set Up
 
