@@ -9,12 +9,32 @@ function App() {
     ? JSON.parse(localStorage.getItem('players'))
     : []);
    const [storedPlayers, setStoredPlayers] = useLocalStorage('players',[])
-  //  useEffect(() => {
-  //   axios.get("http://localhost:5000/api/players")
-  //     .then(res => setGoogleData(res.data))
-  //     .catch(err => console.log('Woops!', err))
-  //  }, []);
-
+  
+   useEffect(() => {
+    const source = axios.CancelToken.source();
+   
+    const loadData = async () => {
+      try {
+        const response = await axios.get("http://localhost:5000/api/players", {
+          cancelToken: source.token
+        });
+        setGoogleData(response.data);
+      } catch (error) {
+        if (axios.isCancel(error)) {
+          // request cancelled
+        } else {
+          throw error;
+        }
+      }
+   
+    };
+   
+    loadData()
+   
+    return () => {
+      source.cancel();
+    };
+  }, [URL]);
    return (
     <div onClick={() => setStoredPlayers(googleData)} className="App">
       <CardContainer googleData={googleData} />
